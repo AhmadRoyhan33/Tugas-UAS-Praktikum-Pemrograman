@@ -1,0 +1,61 @@
+#include <stdio.h>
+#include <windows.h>
+
+int main()
+{
+  welcome();
+  fee();
+  closing();
+}
+void welcome()
+{
+     int key;
+     system ("Judul Applikasi");
+     system ("cls");
+     printf ("\n\n\n\n\t\t\t   Parking Fee Beta Version");
+     printf ("\n\n\n\n\t                      .:App Information:.");
+     printf ("\n\n\t\tThis app can help you to calculating your parking fee");
+     printf ("\n\n\n\n\t\t            Press Enter to counting.");
+     printf ("\n\n\n\n\n\n\t                        Ahmad Royhan               ");
+     printf ("\n\n\t         Universitas Sriwijaya, Teknik Informatika 2014");
+     system("COLOR 0A");
+
+     key = getch();
+     while (key != 13) {
+           key = getch();
+     }
+     system("cls");
+}
+
+void fee()
+{
+    int iMasuk, iKeluar, iLama;
+    long int iBiaya;
+
+    printf("Menghitung Biaya Parkir\n\n");
+    printf(" Jam Masuk : ");
+    scanf("%f",&iMasuk);
+
+    printf(" \nJam Keluar : ");
+    scanf("%f",&iKeluar);
+
+    if (iKeluar >= iMasuk)
+          iLama = iKeluar - iMasuk;
+    else
+          iLama = (12-iMasuk) + iKeluar;
+
+    if (iLama > 1)
+       iBiaya = 2000 + ((iLama - 2)*1000);
+    else
+        iBiaya = 2000;
+
+    printf("\n\n Biaya parkir adalah : Rp %f \n", iBiaya);
+
+      system("PAUSE");
+      return 0;
+}
+
+void closing()
+{
+    printf("\n\n\n\n\t    Thanks To Using This App and Still Waiting For New Update\n\n\n");
+}
